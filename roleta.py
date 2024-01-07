@@ -1,5 +1,4 @@
-import random
-from flask import Flask
+from random import choice
 
 print('=' * 30)
 print('ROLETA RUSSA')
@@ -7,14 +6,15 @@ print('=' * 30)
 
 
 revolver = [1, 2, 3, 4, 5, 6]
-roleta = random.choice(revolver)
+roleta = choice(revolver)
 jogador = int(input('Escolha um número de 1 até 6: '))
 
-if jogador == roleta:
-    print('Você morreu :)')
-elif jogador != roleta:
-    print('Você sobreviveu')
-print('FIM')
+while True:
+    if jogador == roleta:
+        resposta = str(input(('Você perdeu, quer tentar dnv? [Y/N]: '))).upper()[0]
+        if resposta == 'N':
+            break
+            
 
 #escolha = print('Quer tentar de novo? [Y/N]').upper
 #if escolha == 'Y':
